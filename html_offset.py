@@ -79,14 +79,9 @@ class OffsetHTMLParser(HTMLParser,dict):
         return deepcopy(self.copy())
 
 if __name__ == "__main__":
-    text = "<html><head><title></title></head><body><h1>見出し1</h1>内容1\n内容2</body></html>"
+    text = "<html><head><title>Hello World!!</title></head></html>"
     parser = OffsetHTMLParser()
     parser.feed(text)
     splitext = text.splitlines()
-    for offset in parser["body"]:
-        print(offset)
-        for idx,t in enumerate(splitext[offset["start"]["offset"]["start"]["line_id"]:offset["end"]["offset"]["end"]["line_id"]+1]):
-            print(t)
     print(parser)
-    parser.reset()
-    #print(parser.deepcopy())
+    print(parser["title"])
