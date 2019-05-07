@@ -20,7 +20,7 @@ HTMLParserとdictを多重継承する形で書いています。
 >>> parser
 {'title': [{'tag': 'title', 'attrs': [], 'start': {'word': '<title>', 'offset': {'start': {'line_id': 0, 'offset': 12}, 'end': {'line_id': 0, 'offset': 19}}}, 'end': {'word': '</title>', 'offset': {'start': {'line_id': 0, 'offset': 32}, 'end': {'line_id': 0, 'offset': 40}}}}], 'head': [{'tag': 'head', 'attrs': [], 'start': {'word': '<head>', 'offset': {'start': {'line_id': 0, 'offset': 6}, 'end': {'line_id': 0, 'offset': 12}}}, 'end': {'word': '</head>', 'offset': {'start': {'line_id': 0, 'offset': 40}, 'end': {'line_id': 0, 'offset': 47}}}}], 'html': [{'tag': 'html', 'attrs': [], 'start': {'word': '<html>', 'offset': {'start': {'line_id': 0, 'offset': 0}, 'end': {'line_id': 0, 'offset': 6}}}, 'end': {'word': '</html>', 'offset': {'start': {'line_id': 0, 'offset': 47}, 'end': {'line_id': 0, 'offset': 54}}}}]}
 ~~~
-この時parserインスタンス自体が辞書を兼ねているため、以下のようにも取得できます。
+この時parserインスタンス自体が辞書を兼ねているため、以下のように各タグごとに参照できます。
 ~~~Python
 >>> parser['title']
 [{'tag': 'title', 'attrs': [], 'start': {'word': '<title>', 'offset': {'start': {'line_id': 0, 'offset': 12}, 'end': {'line_id': 0, 'offset': 19}}}, 'end': {'word': '</title>', 'offset': {'start': {'line_id': 0, 'offset': 32}, 'end': {'line_id': 0, 'offset': 40}}}}]
